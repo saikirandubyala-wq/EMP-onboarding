@@ -26,7 +26,7 @@ namespace Onboarding.Api.Services
             var message = new MailMessage("hr@company.com", to)
             {
                 Subject = "Welcome to the team!",
-                Body = $"Hi {employee.Email},your employeeId is  {employee.Id}, your role is {employee.Role}. Welcome aboard!"
+                Body = $"\n Hi {employee.Email},\n your employeeId is  {employee.Id}, \n your role is {employee.Role}.\n Welcome aboard!"
             };
 
             using var client = new SmtpClient(_configuration["Smtp:Host"], int.Parse(_configuration["Smtp:Port"]))
